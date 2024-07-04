@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq58my54rmnt1"]
+
+[ext_resource type="Script" path="res://Scenes/game_manager.gd" id="1_3owqs"]
+[ext_resource type="PackedScene" uid="uid://d3pyumx872suq" path="res://Scenes/Menus/main_menu.tscn" id="1_n04ns"]
+
+[node name="GameManager" type="Node2D"]
+script = ExtResource("1_3owqs")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Scene" type="Node" parent="."]
+
+[node name="MainMenu" parent="Scene" instance=ExtResource("1_n04ns")]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0

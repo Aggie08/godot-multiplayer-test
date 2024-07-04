@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3pyumx872suq"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/main_menu.gd" id="1_bjya8"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bjya8")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Title" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="GameTitle" type="Label" parent="MarginContainer/VBoxContainer/Title"]
+layout_mode = 2
+text = "Working Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuOptions" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="LevelTest" type="Button" parent="MarginContainer/VBoxContainer/MenuOptions"]
+layout_mode = 2
+text = "Demo Level"
+
+[node name="Host" type="Button" parent="MarginContainer/VBoxContainer/MenuOptions"]
+layout_mode = 2
+text = "Host a server"
+
+[node name="Join" type="Button" parent="MarginContainer/VBoxContainer/MenuOptions"]
+layout_mode = 2
+text = "Join a server"
+
+[node name="Dedicated" type="Button" parent="MarginContainer/VBoxContainer/MenuOptions"]
+layout_mode = 2
+text = "Join the dedicated server"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/MenuOptions"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuOptions/LevelTest" to="." method="_on_level_test_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuOptions/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuOptions/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuOptions/Dedicated" to="." method="_on_dedicated_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuOptions/Quit" to="." method="_on_quit_pressed"]

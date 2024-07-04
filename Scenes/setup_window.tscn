@@ -1,0 +1,91 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb1t4b3baxo7u"]
+
+[ext_resource type="Script" path="res://Scenes/setup_window.gd" id="1_68rhb"]
+[ext_resource type="Texture2D" uid="uid://cpyexvhbxb8aa" path="res://Assets/UI/basic_window.png" id="1_i0lro"]
+
+[node name="SetupWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_68rhb")
+
+[node name="Window" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -99.5
+offset_right = 160.0
+offset_bottom = 99.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_i0lro")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="GridContainer" type="GridContainer" parent="Window"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -82.0
+offset_top = 10.0
+offset_right = 82.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="UserLabel" type="Label" parent="Window/GridContainer"]
+visible = false
+layout_mode = 2
+text = "User name: "
+
+[node name="UserText" type="LineEdit" parent="Window/GridContainer"]
+visible = false
+layout_mode = 2
+
+[node name="HostLabel" type="Label" parent="Window/GridContainer"]
+visible = false
+layout_mode = 2
+text = "Host name: 
+"
+
+[node name="HostText" type="LineEdit" parent="Window/GridContainer"]
+visible = false
+layout_mode = 2
+
+[node name="JoinLabel" type="Label" parent="Window/GridContainer"]
+visible = false
+layout_mode = 2
+text = "Join IP: "
+
+[node name="JoinText" type="LineEdit" parent="Window/GridContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Continue" type="Button" parent="Window"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.5
+offset_top = -49.0
+offset_right = 39.5
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Continue"
+
+[connection signal="pressed" from="Window/Continue" to="." method="_on_continue_pressed"]

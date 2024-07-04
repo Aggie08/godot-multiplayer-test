@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgfkjsj7ji8fu"]
+
+[ext_resource type="Script" path="res://Scenes/UI/controller.gd" id="1_eg2lm"]
+[ext_resource type="Texture2D" uid="uid://xkqrh2k18os4" path="res://Assets/UI/left_button.png" id="2_3vxge"]
+[ext_resource type="Texture2D" uid="uid://ddo3q2egulgqj" path="res://Assets/UI/right_button.png" id="3_5bvrk"]
+[ext_resource type="Texture2D" uid="uid://iddptt24dgtd" path="res://Assets/UI/up_button.png" id="4_qqxeq"]
+
+[node name="Controller" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_eg2lm")
+
+[node name="LeftButton" type="TouchScreenButton" parent="."]
+position = Vector2(40, 280)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_3vxge")
+passby_press = true
+action = "ui_left"
+visibility_mode = 1
+
+[node name="RightButton" type="TouchScreenButton" parent="."]
+position = Vector2(120, 280)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_5bvrk")
+passby_press = true
+action = "ui_right"
+visibility_mode = 1
+
+[node name="JumpButton" type="TouchScreenButton" parent="."]
+position = Vector2(515, 255)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("4_qqxeq")
+action = "jump"
+visibility_mode = 1
