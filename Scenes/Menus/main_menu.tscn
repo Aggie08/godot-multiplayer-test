@@ -44,13 +44,14 @@ text = "Demo Level"
 
 [node name="Host" type="Button" parent="MarginContainer/VBoxContainer/MenuOptions"]
 layout_mode = 2
-text = "Host a server"
+text = "Host a game"
 
 [node name="Join" type="Button" parent="MarginContainer/VBoxContainer/MenuOptions"]
 layout_mode = 2
-text = "Join a server"
+text = "Join a game"
 
 [node name="Dedicated" type="Button" parent="MarginContainer/VBoxContainer/MenuOptions"]
+visible = false
 layout_mode = 2
 text = "Join the dedicated server"
 

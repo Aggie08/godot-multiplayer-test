@@ -22,12 +22,10 @@ func change_scene(new_scene: String):
 
 func spawn_player(player):
 	await get_tree().create_timer(0.5).timeout
-	var level = scene.get_child(0)
-	#var location = level.find_child("SpawnPoint")
-	#player.position = Vector2(0,-5)
+	var level = scene.get_child(0).get_node("SpawnPoint")
 	
 	level.add_child(player)
 
 func remove_player(player):
-	var level = scene.get_child(0)
+	var level = scene.get_child(0).get_node("SpawnPoint")
 	level.find_child(player).queue_free()

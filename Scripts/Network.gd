@@ -66,7 +66,6 @@ func _on_player_disconnected(id):
 	if not multiplayer.is_server():
 		multiplayer.multiplayer_peer.disconnect_peer(1)
 	players.erase(id)
-	manager.remove_player(str(id))
 
 #When you join a server
 func _on_server_connected():
@@ -85,4 +84,4 @@ func _on_server_disconnected():
 	print("Server disconnected")
 	multiplayer.multiplayer_peer = null
 	players.clear()
-	manager.change_scene()
+	manager.change_scene(Global.main_menu)
